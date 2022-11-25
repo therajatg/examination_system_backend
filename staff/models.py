@@ -4,5 +4,5 @@ from django.db import models
 
 class Staff(models.Model):
     staff_id=models.AutoField(unique=True, primary_key=True)
-    name=models.models.CharField(max_length=50)
+    name=models.CharField(max_length=50)
     

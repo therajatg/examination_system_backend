@@ -4,4 +4,4 @@ from django.db import models
 
 class Course(models.Model):
     course_id=models.AutoField(unique=True, primary_key=True)
-    name=models.models.CharField(max_length=100)
+    name=models.CharField(max_length=100)
