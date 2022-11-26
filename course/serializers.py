@@ -1,7 +1,7 @@
-from .models import Course
+from .models import Test
 from rest_framework import serializers
 
 class CourseSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
-		model=Course
+		model=Test
 		fields="__all__"

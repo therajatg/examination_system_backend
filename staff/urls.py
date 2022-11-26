@@ -1,11 +1,14 @@
 from django.contrib import admin
 from django.urls import path,include
+from . import views
 from .views import StaffViewSet
 from rest_framework import routers
 
 
 router= routers.DefaultRouter()
-router.register(r'staffs', StaffViewSet)
+router.register(r'staff', StaffViewSet)
 urlpatterns = [    
-    path('',include(router.urls))
+    path('',include(router.urls)),
+    # path('stafflogin/', views.staffLogin),
+    # path('getloggedinstaff/', views.getLoggedinstaff),
 ]
