@@ -9,7 +9,7 @@ router= routers.DefaultRouter()
 router.register(r'student', StudentViewSet)
 urlpatterns = [    
     path('',include(router.urls)),
-    path('studentlogin/', views.studentLogin),
-    path('getloggedinstudent/', views.getLoggedinstudent)
+    # path('studentlogin/', views.studentLogin),
+    # path('getloggedinstudent/', views.getLoggedinstudent)
 ]
 

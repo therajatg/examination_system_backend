@@ -6,9 +6,9 @@ from student.models import Student
 
 
 class Course(models.Model):
-    Course_id= models.AutoField(primary_key=True)
-    Name=models.CharField(blank=False,max_length=250,unique=True)
-    Author=models.ForeignKey(Staff,on_delete=models.SET_NULL)
+    Course_id= models.AutoField(primary_key=True, default="any")
+    Name=models.CharField(blank=False,max_length=250,unique=True, default="Haha")
+    # Author=models.ForeignKey(Staff,on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
         return self.Name
@@ -21,7 +21,7 @@ class Question(models.Model):
     Option3=models.CharField(max_length=250,blank=False)
     Option4=models.CharField(max_length=250,blank=False)
     Correct_Ans=models.CharField(max_length=250,blank=False)
-    course=models.ForeignKey(Course,on_delete=models.CASCADE)
+    # course=models.ForeignKey(Course,on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
         return self.Question   
@@ -29,8 +29,8 @@ class Question(models.Model):
 class Score(models.Model):
     Score_id=models.AutoField(primary_key=True)
     Score=models.IntegerField(blank=False,unique=True)
-    Student_id=models.ForeignKey(Student,on_delete=models.SET_NULL,blank=False)
-    Course_id=models.ForeignKey(Course,on_delete=models.CASCADE,blank=False)
+    # Student_id=models.ForeignKey(Student,on_delete=models.CASCADE,blank=False, null=True)
+    # Course_id=models.ForeignKey(Course,on_delete=models.CASCADE,blank=True, null=True)
 
     def __int__(self):
         return self.Score
